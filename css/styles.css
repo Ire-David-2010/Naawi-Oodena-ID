@@ -1,4 +1,4 @@
-/* Main colors for the website. i chose these colours because they represent the sky and im my head the sky represents the future and thatswhat this community is doing*/
+/* Main colors for the website. i chose these colours because they represent the sky and im my head the sky represents the future and thats what this community is doing*/
 :root {
     --main-blue: #28A1FA;
     --main-yellow: #FAD028;
@@ -24,6 +24,9 @@ body {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
@@ -34,6 +37,7 @@ body {
     list-style: none;
     display: flex;
     gap: 20px;
+    
 }
 
 .main-nav a {
@@ -113,7 +117,7 @@ body {
     border-radius: 8px;
     overflow: hidden;
     width: 300px;
-    border: #FAD028;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .info-card img {
@@ -194,12 +198,12 @@ body {
 }
 
 .submit-btn:hover {
-    background-color: var(--main-red);
+    background-color: var(--main-yellow);
 }
 
 /* Footer */
 .site-footer {
-    background-color: var(--dark-gray);
+    background-color: var(--dark-blue);
     color: var(--white);
     text-align: center;
     padding: 20px;
