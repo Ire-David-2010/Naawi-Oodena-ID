@@ -5,6 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naawi-Oodena</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Canadian+Aboriginal&display=swap" rel="stylesheet">
+
+    <script>
+    window.addEventListener('scroll', () => {
+    const banner = document.querySelector('.main-banner');
+    const scrollY = window.scrollY;
+
+    if (scrollY > 300) { // Adjust threshold as needed
+        banner.classList.add('scrolled');
+    } else {
+        banner.classList.remove('scrolled');
+    }
+});
+
+    
+    window.addEventListener('scroll', () => {
+        const banner = document.querySelector('.main-banner');
+        const scrollY = window.scrollY;
+
+        if (scrollY > 300) {
+            banner.classList.add('scrolled');
+        } else {
+            banner.classList.remove('scrolled');
+        }
+    });
+
+    // Wait for DOM to load before accessing elements
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('language-toggle').addEventListener('click', function() {
+            // Toggle the Cree font class on the body
+            document.body.classList.toggle('body-cree');
+            
+            // Update button text
+            const languageText = document.getElementById('language-text');
+            if (document.body.classList.contains('body-cree')) {
+                languageText.textContent = 'English';
+            } else {
+                languageText.textContent = 'Cree';
+            }
+        });
+    });
+
+    </script>
+
+    <style>
+        
+    iframe {
+    width: 100%;
+    height: 500px;
+    max-width: 900px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+.iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+    </style>
     
 </head>
 
@@ -12,7 +88,7 @@
     <!-- Header with logo and navigation -->
     <header class="site-header">
         <div class="logo-container">
-            <img src="images/logo.png" alt="Naawi-Oodena logo" class="logo">
+            <img src="images/logo.png" alt="Naawi-Oodena logo whic shows a indeginous man, a bird and a skyline" class="logo">
         </div>
         <nav class="main-nav">
             <ul>
@@ -21,12 +97,20 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+
+            <button id="language-toggle" style="margin-left: 20px; padding: 8px 15px; background: #362C18; color: #E0C79A; border: none; border-radius: 5px; cursor: pointer;">
+        Switch to <span id="language-text">Cree</span>
+    </button>
+
     </header>
 
     <!-- Big picture at top -->
     <section class="main-banner">
+        
+<div class="banner-bg bg1"></div>
+    <div class="banner-bg bg2"></div>
         <div class="banner-text">
-            <h1>Welcome to Naawi-Oodena</h1>
+            <h1>The Pearl of the Praries</h1>
             <p>A great place to live, work, and play</p>
             <a href="about.html" class="learn-more-btn">Learn More</a>
         </div>
@@ -37,12 +121,12 @@
         <h2>Housing Options</h2>
         <div class="card-container">
             <div class="info-card">
-                <img src="images/house1.jpg" alt="Single family home">
+                <img src="images/house.png" alt="a Single family home in a naghbouhood">
                 <h3>Family Homes</h3>
                 <p>Spacious houses with yards for families.</p>
             </div>
             <div class="info-card">
-                <img src="images/apartment.jpg" alt="Apartment building">
+                <img src="images/apartment.png" alt="an apartment building that id brown and in a clean street">
                 <h3>Apartments</h3>
                 <p>Modern apartments with great amenities.</p>
             </div>
@@ -51,20 +135,26 @@
 
     <!-- Business section -->
     <section class="info-section dark-bg">
-        <h2>Business Areas</h2>
+        <h2>Multi-Use Village</h2>
         <div class="card-container">
             <div class="info-card">
-                <img src="images/shops.jpg" alt="Shopping area">
+                <img src="images/shops.png" alt="a street of shops in a multi-use village">
                 <h3>Shops</h3>
                 <p>Great places to shop and eat.</p>
             </div>
             <div class="info-card">
-                <img src="images/offices.jpg" alt="Office building">
+                <img src="images/offices.png" alt="an office building in a multi-use village">
                 <h3>Offices</h3>
                 <p>Places to work and run businesses.</p>
             </div>
         </div>
     </section>
+
+
+        <section class="info-section dark-bg">
+
+            <iframe src="https://www.youtube.com/embed/cwM08UJRQR0" allowfullscreen  title="YouTube video about Naawi-Oodena"></iframe>
+        </section>
 
     <!-- Footer -->
     <footer class="site-footer">
