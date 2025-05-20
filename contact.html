@@ -1,3 +1,4 @@
+<!--header-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +13,7 @@
         <div class="logo-container">
             <img src="images/logo.png" alt="Naawi-Oodena logo" class="logo">
         </div>
+        <!--nav bar-->
         <nav class="main-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -20,7 +22,7 @@
             </ul>
         </nav>
     </header>
-
+<!--Forms for Q&A-->
     <main>
         <section class="page-title">
             <h1>Contact Us</h1>
@@ -30,25 +32,26 @@
         <section class="form-section">
             <form class="contact-form">
                 <div class="form-group">
+                    <!--makes it required to put in your name and imputs it in text-->
                     <label for="name">Your Name:</label>
                     <input type="text" id="name" name="name" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" required> <!--makes it required to put in your email and imputs it in email-->
                 </div>
                 
                 <div class="form-group">
-                    <label for="question">Your Question:</label>
+                    <label for="question">Your Question:</label> <!--gives you 4 rows for questions-->
                     <textarea id="question" name="question" rows="4" required></textarea>
                 </div>
                 
-                <button type="submit" class="submit-btn">Send Message</button>
+                <button type="submit" class="submit-btn">Send Message</button> <!--the button to submit your question-->
             </form>
         </section>
     </main>
-
+<!--footer-->
     <footer class="site-footer">
         <p>&copy; 2023 Naawi-Oodena</p>
     </footer>

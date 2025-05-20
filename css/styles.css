@@ -3,49 +3,42 @@ another reason i chose this colour is because the plans of this naghbourhood al 
 the primary colour is dark brown to make the fonts pop out the screen and the rest are secondary because the are a lighter shade of brown and
 compliments the darker brown*/
 :root {
-    --main-blue: #B6AD9C;
-    --main-yellow: #362C18;
-    --light-gray: #61543B;
-    --dark-blue: #E0C79A;
-    --white: #8B816C;
+    /* Color Variables  */
+    --beige: #B6AD9C;
+    --dark-brown: #362C18;
+    --light-brown: #61543B;
+    --orange-brown: #E0C79A;
+    --dark-beige: #8B816C;
+    
+    /*Spacing System */
+    --space-unit: 1rem;
+    --space-xxs: calc(0.25 * var(--space-unit));
+    --space-xs: calc(0.5 * var(--space-unit));
+    --space-sm: calc(0.75 * var(--space-unit));
+    --space-md: var(--space-unit);
+    --space-lg: calc(2 * var(--space-unit));
+    --space-xl: calc(3.25 * var(--space-unit));
+    --space-xxl: calc(5.25 * var(--space-unit));
 }
 
-/* Basic page setup */
+/* Base Styles with Cultural Spacing */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.5;
-    color: var(--dark-blue);
+    line-height: 1.6; /* Increased for better readability */
+    color: var(--dark-brown);
     margin: 0;
     padding: 0;
 }
 
-/* Cree/Ojibwe font class */
-.body-cree {
-    font-family: 'Noto Sans Canadian Aboriginal', sans-serif;
+/* Flow System for Vertical Rhythm */
+.flow > * + * {
+    margin-top: var(--space-md);
 }
 
-
-/* Language toggle button styling */
-#language-toggle {
-    background: #362C18;
-    color: #E0C79A;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 20px;
-    transition: background 0.3s;
-}
-
-#language-toggle:hover {
-    background: #362C18;
-}
-
-
-/* Header styles */
+/* Header with Cultural Spacing */
 .site-header {
-    background-color: var(--white);
-    padding: 15px;
+    background-color: white;
+    padding: var(--space-lg) 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,124 +50,70 @@ body {
 
 .logo {
     height: 50px;
+    margin-right: var(--space-sm);
 }
 
 .main-nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
-    
+    gap: var(--space-lg); /* Increased for ceremonial feel */
 }
 
 .main-nav a {
-    color: var(--dark-blue);
+    color: var(--dark-brown);
     text-decoration: none;
     font-weight: bold;
+    padding: var(--space-xs) var(--space-sm);
 }
 
-.main-nav a.current {
-    color: var(--main-blue);
-}
-
-/* Banner section */
+/* Banner Area with Sacred Space */
 .main-banner {
     position: relative;
-    height: 1000px;
+    height: 80vh; /* Reduced from 1000px for better proportion */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--white);
-    padding: 20px;
+    color: white;
+    padding: var(--space-xxl) 5%;
     overflow: hidden;
 }
 
-.banner-bg {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    transition: opacity 0.5s ease;
-    z-index: -1;
-}
-
-.banner-bg.bg1 {
-    background-image: url('../images/banner1.png');
-    opacity: 1;
-}
-
-.banner-bg.bg2 {
-    background-image: url('../images/banner2.png');
-    opacity: 0;
-}
-
-.main-banner.scrolled .bg1 {
-    opacity: 0;
-}
-.main-banner.scrolled .bg2 {
-    opacity: 1;
-}
-
-
-
-
-.banner-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.learn-more-btn {
-    display: inline-block;
-    background-color: var(--main-blue);
-    color: var(--white);
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 15px;
-}
-
-.learn-more-btn:hover {
-    background-color: var(--main-yellow);
-}
-
-/* Info sections */
-.info-section {
-    padding: 40px 20px;
-}
-
-.dark-bg {
-    background-color: var(--main-blue);
-    color: var(--white);
-}
-
-.gray-bg {
-    background-color: var(--dark-blue);
-}
-
-.info-section h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2rem;
-}
-
-/* Card styles */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    max-width: 1200px;
+.banner-text {
+    max-width: 65ch;
+    padding: var(--space-xl);
+    background-color: rgba(182, 173, 156, 0.7);
+    border-radius: 8px;
     margin: 0 auto;
 }
 
+.banner-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-sm);
+}
+
+/* Card System with Communal Spacing */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl); /* Represents communal spaces */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-lg) 5%;
+}
+
 .info-card {
-    background-color: var(--white);
+    background-color: white;
     border-radius: 8px;
     overflow: hidden;
-    width: 300px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid var(--dark-beige);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(54, 44, 24, 0.1);
 }
 
 .info-card img {
@@ -184,117 +123,96 @@ body {
 }
 
 .info-card h3 {
-    padding: 15px 15px 0;
-    color: var(--main-blue);
+    padding: var(--space-md) var(--space-md) 0;
+    color: var(--dark-brown);
 }
 
 .info-card p {
-    padding: 0 15px 15px;
+    padding: 0 var(--space-md) var(--space-md);
 }
 
-/* Side by side layout */
-.side-by-side {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.half-width {
-    flex: 1;
-    min-width: 300px;
-}
-
-.half-width img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-/* Form styles */
-.form-section {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.contact-form {
-    background-color: var(--white);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-family: Arial, sans-serif;
-}
-
-.submit-btn {
-    background-color: var(--main-blue);
-    color: var(--white);
-    border: none;
-    padding: 12px 25px;
-    border-radius: 4px;
+/* Language Toggle with Directional Spacing */
+#language-toggle {
+    background: var(--light-brown);
+    color: var(--beige);
+    border: 1px solid var(--orange-brown);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 5px;
     cursor: pointer;
+    margin-left: var(--space-xl); /* Honors Four Directions */
     font-size: 1rem;
+    transition: all 0.3s;
 }
 
-.submit-btn:hover {
-    background-color: var(--main-yellow);
+/* Cree Text Specific Adjustments */
+.body-cree {
+    font-family: 'Noto Sans Canadian Aboriginal', sans-serif;
 }
 
-/* Footer */
+[lang="cr"], [data-cree] {
+    letter-spacing: 0.03em;
+    word-spacing: 0.1em;
+    line-height: 1.7; /* Extra space for syllabics */
+}
+
+/* Footer with Generous Top Space */
 .site-footer {
-    background-color: var(--dark-blue);
-    color: var(--white);
+    background-color: var(--dark-brown);
+    color: var(--beige);
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+    padding: var(--space-xl) var(--space-md);
+    margin-top: var(--space-xxl); /* Sacred separation */
 }
 
-/* Mobile styles */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .site-header {
         flex-direction: column;
+        gap: var(--space-md);
+        padding: var(--space-md) 5%;
     }
     
     .main-nav ul {
-        margin-top: 15px;
+        margin-top: var(--space-md);
+        gap: var(--space-md);
     }
     
     .main-banner {
-        height: 300px;
+        height: 60vh;
+        padding: var(--space-xl) 5%;
     }
     
-    .banner-text h1 {
-        font-size: 2rem;
+    .banner-text {
+        padding: var(--space-lg);
+    }
+    
+    #language-toggle {
+        margin: var(--space-md) 0 0;
+    }
+    
+    /* Adjust spacing units for mobile */
+    :root {
+        --space-unit: 0.8rem;
     }
 }
 
+/* Special Cultural Elements */
+.cultural-divider {
+    display: flex;
+    align-items: center;
+    margin: var(--space-xl) auto;
+    max-width: 1200px;
+}
 
+.cultural-divider::before,
+.cultural-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--orange-brown);
+}
 
-/*iframe {
-    border: none;          
-    width: 100%;           
-    height: 400px;          
-    max-width: 800px;       
-    margin: 10px auto;       
-    display: block;          
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    background: #f5f5f5;     
+.cultural-divider span {
+    padding: 0 var(--space-md);
+    color: var(--dark-brown);
 }
