@@ -186,12 +186,15 @@ body {
     border-radius: 8px;
     margin: 0 auto;
     border: 2px solid var(--dark-brown);
+    z-index: 5;
 }
 
 .banner-text h1 {
     font-size: 2.5rem;
     margin-bottom: var(--space-sm);
     color: var(--dark-brown);
+
+    z-index: 5;
 }
 
 /* Card styles for content sections */
