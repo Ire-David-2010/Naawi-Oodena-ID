@@ -46,10 +46,22 @@ body {
 .site-header {
     background-color: var(--beige);
     padding: var(--space-lg) 5%;
+    /* Flexbox with prefixes */
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
+    /* Box‐shadow with prefixes */
+    -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* position: sticky prefix for older WebKit */
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -64,6 +76,9 @@ body {
 /* Navigation styles consistent across all pages */
 .main-nav ul {
     list-style: none;
+    /* Flexbox with prefixes */
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     gap: var(--space-lg);
 }
@@ -73,6 +88,10 @@ body {
     text-decoration: none;
     font-weight: bold;
     padding: var(--space-xs) var(--space-sm);
+    /* Transition with prefixes */
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
     position: relative;
 }
@@ -95,24 +114,75 @@ body {
     color: var(--light-brown);
 }
 
-/* Banner styles*/
+/* Banner styles for animations*/
 .main-banner {
-    position: relative;
-    height: 80vh;
+    position: relative;       
+    overflow: hidden;         
+
+    height: 80vh; 
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     justify-content: center;
     text-align: center;
     color: var(--dark-brown);
     padding: var(--space-xxl) 5%;
-    overflow: hidden;
     background: linear-gradient(to bottom, var(--orange-brown), var(--beige));
+
+}
+
+
+
+
+.banner-bg1 {
+    z-index: 1;
+    opacity: 1;
+    background-image: url(/images/banner1.png); /* first banner image */
+    position: absolute;  /* fill the parent */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.5s ease;
+}
+
+.banner-bg2 {
+    z-index: 0;
+    opacity: 0;
+    background-image: url(/images/banner2.png); /* second banner image */
+    position: absolute;  /* fill the parent */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.5s ease;
+}
+
+
+.main-banner.scrolled .banner-bg1 {
+    opacity: 0;
+}
+
+.main-banner.scrolled .banner-bg2 {
+    opacity: 1;
 }
 
 .banner-text {
     max-width: 65ch;
     padding: var(--space-xl);
     background-color: rgba(182, 173, 156, 0.9);
+    /* Border‐radius with prefixes */
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
     border-radius: 8px;
     margin: 0 auto;
     border: 2px solid var(--dark-brown);
@@ -136,15 +206,33 @@ body {
 
 .info-card {
     background-color: var(--beige);
+    /* Border‐radius with prefixes */
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
     border-radius: 8px;
     overflow: hidden;
+    /* Box‐shadow with prefixes */
+    -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* Transition with prefixes */
+    -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -moz-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 2px solid var(--dark-beige);
 }
 
 .info-card:hover {
+    /* Transform with prefixes */
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
     transform: translateY(-5px);
+    /* Box‐shadow on hover with prefixes */
+    -webkit-box-shadow: 0 10px 20px rgba(54, 44, 24, 0.15);
+    -moz-box-shadow: 0 10px 20px rgba(54, 44, 24, 0.15);
     box-shadow: 0 10px 20px rgba(54, 44, 24, 0.15);
     border-color: var(--light-brown);
 }
@@ -152,6 +240,8 @@ body {
 .info-card img {
     width: 100%;
     height: 200px;
+    /* Object-fit (optional prefix for older Opera) */
+    -o-object-fit: cover;
     object-fit: cover;
     border-bottom: 2px solid var(--dark-beige);
 }
@@ -174,13 +264,6 @@ body {
     color: var(--beige);
 }
 
-.banner-bg1{
-    background-image: url(images/banner1.png);
-}
-
-.banner-bg2{
-    background-image: url(images/banner2.png);
-}
 
 .dark-bg .info-card {
     background-color: var(--light-brown);
@@ -203,10 +286,17 @@ body {
     color: var(--beige);
     border: 2px solid var(--dark-brown);
     padding: var(--space-xs) var(--space-sm);
+    /* Border‐radius with prefixes */
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     border-radius: 5px;
     cursor: pointer;
     margin-left: var(--space-xl);
     font-size: 1rem;
+    /* Transition with prefixes */
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
     transition: all 0.3s;
 }
 
@@ -242,7 +332,13 @@ body {
     margin: 2rem auto;
     padding: 2rem;
     background: var(--beige);
+    /* Border‐radius with prefixes */
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
     border-radius: 8px;
+    /* Box‐shadow with prefixes */
+    -webkit-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     border: 2px solid var(--dark-beige);
 }
@@ -264,9 +360,16 @@ body {
     width: 100%;
     padding: 0.8rem;
     border: 1px solid var(--dark-beige);
+    /* Border‐radius with prefixes */
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
     border-radius: 4px;
     font-family: Arial, sans-serif;
     background-color: white;
+    /* Transition with prefixes */
+    -webkit-transition: border 0.3s ease;
+    -moz-transition: border 0.3s ease;
+    -o-transition: border 0.3s ease;
     transition: border 0.3s ease;
 }
 
@@ -275,6 +378,9 @@ body {
 .form-group select:focus {
     border-color: var(--dark-brown);
     outline: none;
+    /* Box‐shadow with prefixes */
+    -webkit-box-shadow: 0 0 0 2px var(--orange-brown);
+    -moz-box-shadow: 0 0 0 2px var(--orange-brown);
     box-shadow: 0 0 0 2px var(--orange-brown);
 }
 
@@ -283,20 +389,35 @@ body {
     color: var(--beige);
     border: none;
     padding: 0.8rem 1.5rem;
+    /* Border‐radius with prefixes */
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
+    /* Transition with prefixes */
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
     transition: all 0.3s;
 }
 
 .submit-btn:hover {
     background-color: var(--active-brown);
+    /* Transform with prefixes */
+    -webkit-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+    -o-transform: translateY(-2px);
     transform: translateY(-2px);
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
     .site-header {
+        /* Flex-direction with prefixes */
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
         flex-direction: column;
         gap: var(--space-md);
         padding: var(--space-md) 5%;
@@ -327,7 +448,12 @@ body {
 
 /* Cultural divider style */
 .cultural-divider {
+    /* Flexbox with prefixes */
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
     margin: var(--space-xl) auto;
     max-width: 1200px;
@@ -382,8 +508,14 @@ body {
 
 /* Side by side layout */
 .side-by-side {
+    /* Flexbox with prefixes */
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     gap: var(--space-lg);
+    /* Align-items with prefixes */
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -397,6 +529,9 @@ body {
 
 @media (max-width: 768px) {
     .side-by-side {
+        /* Flex-direction with prefixes */
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
 }

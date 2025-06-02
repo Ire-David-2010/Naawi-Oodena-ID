@@ -1,3 +1,8 @@
+<!-- Name: Ire David
+Course: Web Development 10S
+Teacher: Ms. Hoitink
+School: Pembina Trails Collegiate (PTC)
+Date Last Modified: 6/2/2025-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,74 +16,125 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Canadian+Aboriginal&display=swap" rel="stylesheet"> <!-- Cree font -->
 
     <style>
-        /* Styles for embedded YouTube video */
-        iframe {
-            width: 100%;          /* Fills container width */
-            height: 500px;        /* Fixed height */
-            max-width: 900px;     /* Won't grow beyond this */
-            margin: 20px auto;    /* Centers with space above or below */
-            border: none;         /* Removes default border */
-            border-radius: 10px;  /* Rounded corners */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Shadow effect */
-        }
+    /* Styles for embedded YouTube video */
+    iframe {
+        width: 100%;          /* Fills container width */
+        height: 500px;        /* Fixed height */
+        max-width: 900px;     /* Won't grow beyond this */
+        margin: 20px auto;    /* Centers with space above or below */
+        border: none;         /* Removes default border */
+        /* Border-radius with prefixes */
+        -webkit-border-radius: 10px;  /* Rounded corners */
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        /* Box-shadow with prefixes */
+        -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
 
-        /* Container that keeps video responsive */
-        .iframe-container {
-            position: relative;     /* Needed for absolute positioning inside */
-            width: 100%;            /* Fills available space */
-            padding-bottom: 56.25%; /* Creates 16:9 aspect ratio */
-            margin: 20px auto;      /* Centers with space */
-            max-width: 900px;       /* Maximum width */
-        }
+    /* Container that keeps video responsive */
+    .iframe-container {
+        position: relative;     /* Needed for absolute positioning inside */
+        width: 100%;            /* Fills available space */
+        padding-bottom: 56.25%; /* Creates 16:9 aspect ratio */
+        margin: 20px auto;      /* Centers with space */
+        max-width: 900px;       /* Maximum width */
+    }
 
-        /* Makes video fill container */
-        .iframe-container iframe {
-            position: absolute; /* Fills container completely */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 10px;  /* Rounded corners */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Shadow */
-        }
+    /* Makes video fill container */
+    .iframe-container iframe {
+        position: absolute; /* Fills container completely */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* Border-radius with prefixes */
+        -webkit-border-radius: 10px;  /* Rounded corners */
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        /* Box-shadow with prefixes */
+        -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Shadow */
+        -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
 
 
 
-        /* Glowing text style */
-        .page-glow h1 {
-            font-size: 3rem;
-            text-transform: uppercase;
-            /* Base glow */
+    /* Glowing text style */
+    .page-glow h1 {
+        font-size: 3rem;
+        text-transform: uppercase;
+        /* Base glow */
+        text-shadow:
+            0 0 5px rgba(255, 255, 255, 0.8),
+            0 0 10px rgba(255, 255, 255, 0.6),
+            0 0 20px rgba(255, 128, 0, 0.6),
+            0 0 30px rgba(255, 128, 0, 0.4),
+            0 0 40px rgba(255, 128, 0, 0.2);
+        /* Animation with prefixes */
+        -webkit-animation: pulseGlow 2.5s ease-in-out infinite;
+        -moz-animation: pulseGlow 2.5s ease-in-out infinite;
+        animation: pulseGlow 2.5s ease-in-out infinite;
+    }
+
+    /* Pulse animation */
+    @-webkit-keyframes pulseGlow {
+        0%, 100% {
             text-shadow:
-                0 0 5px rgba(255, 255, 255, 0.8),
-                0 0 10px rgba(255, 255, 255, 0.6),
-                0 0 20px rgba(255, 128, 0, 0.6),
-                0 0 30px rgba(255, 128, 0, 0.4),
-                0 0 40px rgba(255, 128, 0, 0.2);
-            animation: pulseGlow 2.5s ease-in-out infinite;
+            0 0 5px rgba(255, 255, 255, 0.8),
+            0 0 10px rgba(255, 255, 255, 0.6),
+            0 0 20px rgba(255, 128, 0, 0.6),
+            0 0 30px rgba(255, 128, 0, 0.4),
+            0 0 40px rgba(255, 128, 0, 0.2);
         }
+        50% {
+            text-shadow:
+            0 0 8px rgba(255, 255, 255, 1),
+            0 0 15px rgba(255, 255, 255, 0.8),
+            0 0 30px rgba(255, 128, 0, 0.8),
+            0 0 45px rgba(255, 128, 0, 0.6),
+            0 0 60px rgba(255, 128, 0, 0.4);
+        }
+    }
+    @-moz-keyframes pulseGlow {
+        0%, 100% {
+            text-shadow:
+            0 0 5px rgba(255, 255, 255, 0.8),
+            0 0 10px rgba(255, 255, 255, 0.6),
+            0 0 20px rgba(255, 128, 0, 0.6),
+            0 0 30px rgba(255, 128, 0, 0.4),
+            0 0 40px rgba(255, 128, 0, 0.2);
+        }
+        50% {
+            text-shadow:
+            0 0 8px rgba(255, 255, 255, 1),
+            0 0 15px rgba(255, 255, 255, 0.8),
+            0 0 30px rgba(255, 128, 0, 0.8),
+            0 0 45px rgba(255, 128, 0, 0.6),
+            0 0 60px rgba(255, 128, 0, 0.4);
+        }
+    }
+    @keyframes pulseGlow {
+        0%, 100% {
+            text-shadow:
+            0 0 5px rgba(255, 255, 255, 0.8),
+            0 0 10px rgba(255, 255, 255, 0.6),
+            0 0 20px rgba(255, 128, 0, 0.6),
+            0 0 30px rgba(255, 128, 0, 0.4),
+            0 0 40px rgba(255, 128, 0, 0.2);
+        }
+        50% {
+            text-shadow:
+            0 0 8px rgba(255, 255, 255, 1),
+            0 0 15px rgba(255, 255, 255, 0.8),
+            0 0 30px rgba(255, 128, 0, 0.8),
+            0 0 45px rgba(255, 128, 0, 0.6),
+            0 0 60px rgba(255, 128, 0, 0.4);
+        }
+    }
+</style>
 
-        /* Pulse animation: subtly ramp up and down the glow */
-        @keyframes pulseGlow {
-            0%, 100% {
-                text-shadow:
-                0 0 5px rgba(255, 255, 255, 0.8),
-                0 0 10px rgba(255, 255, 255, 0.6),
-                0 0 20px rgba(255, 128, 0, 0.6),
-                0 0 30px rgba(255, 128, 0, 0.4),
-                0 0 40px rgba(255, 128, 0, 0.2);
-            }
-            50% {
-                text-shadow:
-                0 0 8px rgba(255, 255, 255, 1),
-                0 0 15px rgba(255, 255, 255, 0.8),
-                0 0 30px rgba(255, 128, 0, 0.8),
-                0 0 45px rgba(255, 128, 0, 0.6),
-                0 0 60px rgba(255, 128, 0, 0.4);
-            }
-        }
-        
-    </style>
 </head>
 
 <body class="page-glow">
