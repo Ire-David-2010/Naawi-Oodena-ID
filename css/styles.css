@@ -142,7 +142,7 @@ body {
 .banner-bg1 {
     z-index: 1;
     opacity: 1;
-    background-image: url(/images/banner1.png); /* first banner image */
+    background-image: url(images/banner1.png); /* first banner image */
     position: absolute;  /* fill the parent */
     top: 0;
     left: 0;
@@ -156,7 +156,7 @@ body {
 .banner-bg2 {
     z-index: 0;
     opacity: 0;
-    background-image: url(/images/banner2.png); /* second banner image */
+    background-image: url(images/banner2.png); /* second banner image */
     position: absolute;  /* fill the parent */
     top: 0;
     left: 0;
